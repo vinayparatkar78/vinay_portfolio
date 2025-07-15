@@ -2,19 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Vinay Paratkar | DevOps Engineer</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <style>
         body {
             font-family: 'Share Tech Mono', monospace;
             background-color: #0D1117;
             color: #C9D1D9;
-            position: relative;
             overflow-x: hidden;
         }
 
@@ -38,23 +46,26 @@
             font-size: 0.9rem;
         }
 
-        /* Background SVG graphics */
+        header a {
+            transition: color 0.3s ease;
+        }
+
+        header a:hover {
+            color: #00e0ff;
+        }
+
         .devops-bg {
             position: fixed;
             inset: 0;
             z-index: -1;
-            background-color: #0D1117;
-            background-image:
-                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%2300e0ff22" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12a11.95 11.95 0 001.737 6.147l.15.247-1.39 4.181 4.181-1.39.247.15A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm-.8 2.086c.267 0 .516.157.626.4l.86 2.02a.71.71 0 01-.088.702l-1.158 1.47c.214.15.426.318.626.503l1.375-1.308c.176-.169.439-.217.668-.12l1.98.86c.243.106.4.356.4.626v2.5c0 .27-.157.52-.4.626l-1.98.86a.715.715 0 01-.668-.12l-1.375-1.308a6.458 6.458 0 01-.626.503l1.158 1.47a.71.71 0 01.088.702l-.86 2.02a.698.698 0 01-.626.4h-2.5a.698.698 0 01-.626-.4l-.86-2.02a.71.71 0 01.088-.702l1.158-1.47a6.41 6.41 0 01-.626-.503l-1.375 1.308a.715.715 0 01-.668.12l-1.98-.86A.698.698 0 014 12.5v-2.5c0-.27.157-.52.4-.626l1.98-.86c.243-.106.52-.05.668.12l1.375 1.308c.2-.185.412-.353.626-.503l-1.158-1.47a.71.71 0 01-.088-.702l.86-2.02a.698.698 0 01.626-.4h2.5z"/></svg>');
-            background-repeat: repeat;
-            background-size: 150px;
-            opacity: 0.04;
+            background: url('bg-img.jpg') center/cover no-repeat;
+            filter: brightness(0.2) blur(1px);
         }
+
     </style>
 </head>
 
 <body>
-
 <!-- BACKGROUND LAYER -->
 <div class="devops-bg"></div>
 
@@ -63,14 +74,14 @@
     <div class="max-w-6xl mx-auto flex justify-between items-center">
         <h1 class="text-2xl sm:text-3xl font-bold text-[#00E0FF] glow">Vinay Paratkar</h1>
         <div class="flex items-center gap-4 text-sm">
-            <a href="mailto:vinayparatkar@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/vinay-paratkar-6ba545200" target="_blank">LinkedIn</a>
-            <a href="https://github.com/vinayparatkar78" target="_blank">GitHub</a>
+            <a href="mailto:vinayparatkar@gmail.com" aria-label="Send email to Vinay">Email</a>
+            <a href="https://linkedin.com/in/vinay-paratkar-6ba545200" target="_blank" aria-label="View LinkedIn">LinkedIn</a>
+            <a href="https://github.com/vinayparatkar78" target="_blank" aria-label="View GitHub">GitHub</a>
         </div>
     </div>
 </header>
 
-<main class="max-w-6xl mx-auto px-6 py-10 space-y-16">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-16">
 
     <!-- About -->
     <section data-aos="fade-up">
@@ -179,8 +190,17 @@
     © 2025 Vinay Paratkar · Powered by Cloud, Code & Containers ⚙️
 </footer>
 
+<!-- Scroll-to-Top Button -->
+<button onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-[#00e0ff] text-[#0D1117] px-3 py-2 rounded-full shadow-lg hover:scale-105 transition">
+    ↑
+</button>
+
+<!-- AOS Init + Scroll Script -->
 <script>
     AOS.init();
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 </script>
 </body>
 </html>
